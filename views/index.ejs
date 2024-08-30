@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>SRM Students' List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Student List</h1>
+
+        <!-- Actions section moved to the top -->
+        <div class="actions">
+            <a href="/register" class="button">Register</a>
+            <a href="/select" class="button">Select</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Course</th>
+                    <th>Skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% list.forEach(student => { %>
+                    <tr>
+                        <td><%= student.name %></td>
+                        <td><%= student.department %></td>
+                        <td><%= student.course %></td>
+                        <td>
+                            <ul>
+                                <li><%= student.skill1 %></li>
+                                <li><%= student.skill2 %></li>
+                                <li><%= student.skill3 %></li>
+                            </ul>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
